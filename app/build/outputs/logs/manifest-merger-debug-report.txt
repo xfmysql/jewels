@@ -1,0 +1,60 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:3:7-37
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:5:7-32
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:4:7-31
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:6:8-46
+	android:targetSdkVersion
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:6:18-43
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+		INJECTED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:7:8-71
+	android:name
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:7:25-68
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:8:8-78
+	android:name
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:8:25-75
+application
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:10:5-19:19
+	android:label
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:10:48-80
+	android:icon
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:10:18-47
+activity#wealk.android.jewels.Menu
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:11:9-16:20
+	android:label
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:11:60-92
+	android:name
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:11:19-59
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:12:13-15:29
+action#android.intent.action.MAIN
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:13:17-69
+	android:name
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:13:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:14:17-77
+	android:name
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:14:27-74
+activity#wealk.android.jewels.Jewels
+ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:17:3-67
+	android:name
+		ADDED from E:\astudio\Jewels\app\src\main\AndroidManifest.xml:17:13-55

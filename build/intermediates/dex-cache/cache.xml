@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="E:\astudio\Jewels\fbgamedemo\libs\andengine.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="715d95030e1c9eaab47ea6c22327e64a0901c6bc">
+        <dex dex="E:\astudio\Jewels\fbgamedemo\build\intermediates\pre-dexed\debug\andengine_3087c9473fe20465fc43c5dbc8c8b33f5cb57e6c.jar" />
+    </item>
+
+</items>
