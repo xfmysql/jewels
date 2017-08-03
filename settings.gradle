@@ -1,1 +1,1 @@
-include ':app', ':jewelsclick', ':fbgamedemo'
+include ':app', ':jewelsclick', ':fbgamedemo', ':girlsecret'
