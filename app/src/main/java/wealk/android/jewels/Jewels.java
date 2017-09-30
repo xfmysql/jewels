@@ -280,7 +280,7 @@ public class Jewels extends BaseGameActivity implements IOnSceneTouchListener, I
 	
 	private GestureDetector mGestureDetector;
 	
-	/*
+
 	@Override
 	 public boolean onTouchEvent(MotionEvent event) {
 	   if (mGestureDetector.onTouchEvent(event))
@@ -288,7 +288,7 @@ public class Jewels extends BaseGameActivity implements IOnSceneTouchListener, I
 	   else
 	     return false;
 	 }	
-	*/
+
 	class ExampleGestureListener extends GestureDetector.SimpleOnGestureListener{
 	    @Override
 	    public boolean onSingleTapUp(MotionEvent ev) {
@@ -344,7 +344,7 @@ public class Jewels extends BaseGameActivity implements IOnSceneTouchListener, I
 		//模式调整
 		this.adjustModel();
 		
-		//游戏循环(监听、更新)
+		//游戏循环(监听、更新),1毫秒
 		this.gameLoop();
 				
 		//自动智能提示
@@ -382,7 +382,7 @@ public class Jewels extends BaseGameActivity implements IOnSceneTouchListener, I
 		if(pSceneTouchEvent.getX() > 0 && pSceneTouchEvent.getX() < CAMERA_WIDTH
 				&& pSceneTouchEvent.getY() > 0 && pSceneTouchEvent.getY() < CAMERA_WIDTH){ 
 			
-			//mGestureDetector.onTouchEvent(pSceneTouchEvent.getMotionEvent());
+			mGestureDetector.onTouchEvent(pSceneTouchEvent.getMotionEvent());
 			
 			if(pSceneTouchEvent.getAction() == MotionEvent.ACTION_DOWN){				
 				mDeadArrList.clear();//试探后可以消去的队列
@@ -555,8 +555,7 @@ public class Jewels extends BaseGameActivity implements IOnSceneTouchListener, I
 			
 			@Override
 			public void onUpdate(float pSecondsElapsed) {
-				
-				//Log.i("debug", "==========="+pSecondsElapsed);
+				 Log.i("debug", "=====gameloop======"+pSecondsElapsed);
 				if(Jewels.this.mGameRunning){		
 					switch (STATE) {
 					case MOVE_UP:						

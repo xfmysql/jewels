@@ -1,20 +1,36 @@
 package com.its.fbgamedemo;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Message;
+import android.util.Log;
+
 import org.anddev.andengine.engine.Engine;
 import org.anddev.andengine.engine.camera.Camera;
+import org.anddev.andengine.engine.handler.timer.ITimerCallback;
+import org.anddev.andengine.engine.handler.timer.TimerHandler;
 import org.anddev.andengine.engine.options.EngineOptions;
 import org.anddev.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
 import org.anddev.andengine.entity.scene.Scene;
 import org.anddev.andengine.entity.scene.background.RepeatingSpriteBackground;
 import org.anddev.andengine.entity.sprite.AnimatedSprite;
 import org.anddev.andengine.entity.sprite.Sprite;
+import org.anddev.andengine.entity.text.ChangeableText;
+import org.anddev.andengine.entity.text.Text;
 import org.anddev.andengine.input.touch.TouchEvent;
+import org.anddev.andengine.opengl.font.Font;
+import org.anddev.andengine.opengl.font.FontFactory;
 import org.anddev.andengine.opengl.texture.Texture;
 import org.anddev.andengine.opengl.texture.TextureOptions;
 import org.anddev.andengine.opengl.texture.region.TextureRegion;
 import org.anddev.andengine.opengl.texture.region.TextureRegionFactory;
 import org.anddev.andengine.opengl.texture.region.TiledTextureRegion;
 import org.anddev.andengine.ui.activity.BaseGameActivity;
+import org.anddev.andengine.util.HorizontalAlign;
+import org.anddev.andengine.util.SystemUtils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by its on 2016-08-04.
@@ -31,7 +47,9 @@ public class TestSprite extends BaseGameActivity {
         return new Engine(mEngineOptions);//需要播放音效;
     }
 
-    private Texture mBackgroundTexture,mSpriteTexture;
+    private Texture mBackgroundTexture,mSpriteTexture,mTexture1;
+    ChangeableText changeText;
+    Font mPlokFont;
     protected TextureRegion mBackgroundTextureRegion,mSpriteTextureRegion;
     public void onLoadResources(){
         TextureRegionFactory.setAssetBasePath("gfx/");
@@ -55,6 +73,13 @@ public class TestSprite extends BaseGameActivity {
         this.mSpriteTexture = new Texture(64, 32, TextureOptions.DEFAULT);
         this.mSpriteTextureRegion = TextureRegionFactory.createFromAsset(this.mSpriteTexture, this, "face_circle_tiled.png", 0, 0);
         this.mEngine.getTextureManager().loadTexture(this.mSpriteTexture);
+
+        this.mTexture1 = new Texture(256, 256, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+        //FontFactory.setAssetBasePath("fonts/");
+        this.mPlokFont = FontFactory.createFromAsset(this.mTexture1, this, "fonts/bluehigh.ttf", 20, true, Color.BLACK);
+        this.mEngine.getTextureManager().loadTexture(this.mTexture1);
+        this.mEngine.getFontManager().loadFonts(this.mPlokFont);
+
 
     }
     protected  Scene mMainScene;//主场景
@@ -104,6 +129,10 @@ public class TestSprite extends BaseGameActivity {
         face.setScale(4f);
         //face.animate(new long[]{200, 200}, 0, 1, true);
 
+        changeText =new ChangeableText(140, 40, this.mPlokFont, "2017-09-24 10:10:00");
+        mMainScene.getTopLayer().addEntity(changeText);
+
+
         this.mMainScene.getLayer(1).addEntity(face);
         // 注册精灵要实现触摸效果
         mMainScene.registerTouchArea(face);
@@ -121,10 +150,30 @@ public class TestSprite extends BaseGameActivity {
                 return true;
             }
         });
+        autoJisuan();
         return this.mMainScene;
     }
 
     @Override
     public void onLoadComplete(){
+
+    }
+
+
+    /**
+     * 钻石自动发光提示(可消去的)
+     */
+    private void autoJisuan(){
+        this.mMainScene.registerUpdateHandler(new TimerHandler(1f, true, new ITimerCallback() {
+            @Override
+            public void onTimePassed(TimerHandler pTimerHandler) {
+
+                SimpleDateFormat df = new SimpleDateFormat("mm:ss");//设置日期格式
+                String t = df.format(new Date());// new Date()为获取当前系统时间
+                changeText.setText(t);
+                Log.e("error","autoJisuan"+t);
+            }
+
+        }));
     }
 }
